@@ -53,7 +53,7 @@ var storySlider = function () {
     var options = {
         speed: 500,
         autoplay: true,
-        autoplaySpeed: 10000,
+        autoplaySpeed: 5000,
         pauseOnFocus: false,
         pauseOnHover: false,
         touchThreshold: 5000,
