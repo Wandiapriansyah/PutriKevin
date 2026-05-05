@@ -4797,7 +4797,7 @@ section.protocol-04 .protocol-item-wrap .protocol-item {
     -webkit-backdrop-filter: blur(2px);
 
     justify-content: center;
-    gap: 22px;
+    gap: 0px;
 }
 
 section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap {
