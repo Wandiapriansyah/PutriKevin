@@ -117,6 +117,18 @@
 /* Root */
 :root {
 
+    --primary-color: #556c5a;
+    /* Warna hijau elegan dari referensi */
+    --text-color: #4a4a4a;
+    --bg-color: #f7f4ec;
+    /* Warna latar halaman (sedikit lebih gelap) */
+    --card-bg: #fefdf9;
+    /* Warna latar kotak (cream terang) */
+    --gold-line: #dbd0ba;
+    /* Warna emas/beige untuk garis */
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Lora', serif;
+
     color-scheme: light dark;
 
     --primary-clr: #452812;
@@ -2132,20 +2144,51 @@ section.protocol-04 .inner .body {
 }
 /* Protocol Item Wrap */
 section.protocol-04 .protocol-item-wrap {
-    padding: 0px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+
+    /* padding: 0px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    text-align: center;
+    text-align: center; */
 }
 .kat-page__side-to-side .secondary-pane section.protocol-04 .protocol-item-wrap {
     max-width: 450px;
 } 
 
 section.protocol-04 .protocol-item-wrap .protocol-item {
-    background-color: var(--background-secondary);
+    width: 100% !important;
+    max-width: unset !important;
+    height:  auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: clamp(25px, 4vw, 40px) clamp(15px, 2vw, 25px);
+    background-color: var(--card-bg);
+    filter: drop-shadow(0 6px 15px rgba(0,0,0,0.05));
+    border: 1px solid rgba(219,208,186,0.25);
+    -webkit-mask:
+        radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
+        radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
+    mask:
+    radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
+    radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
+
+    /* background-color: var(--background-secondary);
     padding: 0;
     width: calc(45% - 10px);
     max-width: 150px;
@@ -2154,41 +2197,181 @@ section.protocol-04 .protocol-item-wrap .protocol-item {
     border-radius: 16px;
     border: 2px solid var(--text-tertiary);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; */
+}
+section.protocol-04 .protocol-item-wrap .protocol-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: 
+        linear-gradient(var(--gold-line) 0 0) center 5px / calc(100% - 38px) 1px no-repeat,
+        linear-gradient(var(--gold-line) 0 0) center calc(100% - 5px) / calc(100% - 38px) 1px no-repeat,
+        linear-gradient(var(--gold-line) 0 0) 5px center / 1px calc(100% - 38px) no-repeat,
+        linear-gradient(var(--gold-line) 0 0) calc(100% - 5px) center / 1px calc(100% - 38px) no-repeat,
+
+        radial-gradient(circle at -5px -5px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) left 5px top 5px / 16px 16px no-repeat,
+
+        radial-gradient(circle at 21px -5px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) right 5px top 5px / 16px 16px no-repeat,
+
+        radial-gradient(circle at -5px 21px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) left 5px bottom 5px / 16px 16px no-repeat,
+
+        radial-gradient(circle at 21px 21px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) right 5px bottom 5px / 16px 16px no-repeat;
 }
 section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap {
-    padding: 10px;
+    width: clamp(70px, 20vw, 130px);
+    height: clamp(70px, 20vw, 130px);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* padding: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 1; */
 }
-section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
+section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap img {
+    object-fit: contain;
+    display: block;
+    aspect-ratio: 1;
+}
+/* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     width: 70px;
     height: 70px;
     margin: 0 auto;
     display: block;
     object-fit: contain;
-    object-position: center;
-}
-section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap {
-    padding: 10px;
+    object-position: center; 
+} */
+section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .title {
+    font-size: clamp(9px, 2.5vw, 13px);
+    color: var(--primary-color);
+    padding: 0 0 1.2rem 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+
+    /* padding: 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 1; */
 }
-section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .text {
+section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .title::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    max-width: 90%;
+    height: 1px;
+    background-color: var(--gold-line);
+}
+section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .title::after {
+    content: '◆';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--gold-line);
+    background-color: var(--card-bg);
+    padding: 0 6px;
+    line-height: 1;
+}
+section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .subtitle {
+    font-size: clamp(11px, 2.8vw, 14px);
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: var(--text-color);
+    max-width: 100%;
+}
+section.protocol-04 .bottom-leaf {
+    width: 50px;
+    height: auto;
+    margin-top: 15px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+/* section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .text {
     font-size: 25px;
     font-family: var(--bebas-neue);
     font-weight: 500;
     line-height: 1.2;
     color: var(--text-tertiary);
+} */
+section.protocol-04 .icon-flowers img {
+    width: clamp(65px, 18vw, 100px);
 }
 
+section.protocol-04 .icon-morning img {
+    width: clamp(75px, 22vw, 140px);
+}
+
+section.protocol-04 .icon-evening img {
+    width: clamp(70px, 20vw, 120px);
+}
+
+section.protocol-04 .icon-comfort img {
+    width: clamp(70px, 20vw, 130px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    section.protocol-04 .protocol-item-wrap {
+        gap: 15px 8px;
+    }
+
+    section.protocol-04 .protocol-item-wrap .protocol-item {
+        padding: 15px 8px;
+    }
+
+    section.protocol-04 .bottom-leaf {
+        width: 40px;
+        margin-top: 10px;
+    }
+}
 
 @media only screen and (max-width: 750px) {
 
@@ -2239,12 +2422,12 @@ section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .text {
     }
 
     section.protocol-04 .protocol-item-wrap {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-    section.protocol-04 .protocol-item-wrap .protocol-item {
+    /* section.protocol-04 .protocol-item-wrap .protocol-item {
         width: 150px;
         margin: 5px auto;
-    }
+    } */
 
 }
 

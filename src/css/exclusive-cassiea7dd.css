@@ -2,6 +2,18 @@
 
 /* cassie */
 body.cassie {
+    --primary-color: #556c5a;
+    /* Warna hijau elegan dari referensi */
+    --text-color: #4a4a4a;
+    --bg-color: #f7f4ec;
+    /* Warna latar halaman (sedikit lebih gelap) */
+    --card-bg: #fefdf9;
+    /* Warna latar kotak (cream terang) */
+    --gold-line: #dbd0ba;
+    /* Warna emas/beige untuk garis */
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Lora', serif;
+
     /* Heading Family */
     --heading-family: "Playwrite US Trad", cursive;
     --heading-style: normal;
@@ -4785,10 +4797,11 @@ section.protocol-04 .inner .body {
 
 section.protocol-04 .protocol-item-wrap .protocol-item {
     align-items: center;
-    background-color: var(--background-tertiary);
-    border: 1px solid var(--background-tertiary);
-    border-radius: 24px;
-    max-width: 130px;
+    background-color: var(--card-bg);
+    /* border: 1px solid var(--gold-line); */
+    /* border-radius: 24px; */
+    /* flex-direction: row; */
+    /* max-width: 130px; */
     width: 100%;
     height: auto;
     margin: 0px;
@@ -4798,6 +4811,46 @@ section.protocol-04 .protocol-item-wrap .protocol-item {
 
     justify-content: center;
     gap: 0px;
+}
+section.protocol-04 .protocol-item-wrap .protocol-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: 
+        linear-gradient(var(--gold-line) 0 0) center 5px / calc(100% - 38px) 1px no-repeat,
+        linear-gradient(var(--gold-line) 0 0) center calc(100% - 5px) / calc(100% - 38px) 1px no-repeat,
+        linear-gradient(var(--gold-line) 0 0) 5px center / 1px calc(100% - 38px) no-repeat,
+        linear-gradient(var(--gold-line) 0 0) calc(100% - 5px) center / 1px calc(100% - 38px) no-repeat,
+
+        radial-gradient(circle at -5px -5px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) left 5px top 5px / 16px 16px no-repeat,
+
+        radial-gradient(circle at 21px -5px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) right 5px top 5px / 16px 16px no-repeat,
+
+        radial-gradient(circle at -5px 21px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) left 5px bottom 5px / 16px 16px no-repeat,
+
+        radial-gradient(circle at 21px 21px,
+            #0000 19px,
+            var(--gold-line) 19.5px,
+            var(--gold-line) 20.5px,
+            #0000 21px
+        ) right 5px bottom 5px / 16px 16px no-repeat;
 }
 
 section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap {
@@ -4813,39 +4866,40 @@ section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap {
     flex-grow: unset;
 }
 
-section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
+/* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
     width: 40px;
     height: auto;
-}
+} */
 
-section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon path {
+/* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon path {
     fill: var(--text-tertiary);
-}
+} */
 
-section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .text {
+/* section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .text {
     font-family: var(--body-text-family);
     font-weight: var(--body-text-weight);
     font-size: var(--body-text-size);
     color: var(--text-tertiary);
-}
+} */
 
 @media (max-width: 360px) {
-    section.protocol-04 .protocol-item-wrap {
+    /* section.protocol-04 .protocol-item-wrap {
         flex-direction: row;
-    }
+    } */
 
     section.protocol-04 .protocol-item-wrap .protocol-item {}
 }
 
 @media (min-width: 768px) {
     section.protocol-04 .protocol-item-wrap .protocol-item {
-        max-width: 190px;
+        /* flex-direction: row; */
+        /* max-width: 190px; */
         height: 215px;
     }
 
-    section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
+    /* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
         width: 70px;
-    }
+    } */
 }
 
 @media (min-width: 560px) and (max-width:960px) {}
