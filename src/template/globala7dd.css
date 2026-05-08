@@ -2145,59 +2145,54 @@ section.protocol-04 .inner .body {
 /* Protocol Item Wrap */
 section.protocol-04 .protocol-item-wrap {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
-
-    /* padding: 0px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center; */
+    align-items: stretch;
 }
+
 .kat-page__side-to-side .secondary-pane section.protocol-04 .protocol-item-wrap {
     max-width: 450px;
-} 
+}
 
 section.protocol-04 .protocol-item-wrap .protocol-item {
     width: 100% !important;
     max-width: unset !important;
-    height:  auto !important;
+    height: auto !important;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     position: relative;
     overflow: hidden;
+
+    margin: 0;
+    border-radius: 0;
+
     padding: clamp(25px, 4vw, 40px) clamp(15px, 2vw, 25px);
+
     background-color: var(--card-bg);
-    filter: drop-shadow(0 6px 15px rgba(0,0,0,0.05));
+
+    /* hilangkan efek jarak */
+    filter: none;
+
     border: 1px solid rgba(219,208,186,0.25);
+
     -webkit-mask:
         radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
         radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
         radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
         radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
-    mask:
-    radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
-    radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
-    radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
-    radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
 
-    /* background-color: var(--background-secondary);
-    padding: 0;
-    width: calc(45% - 10px);
-    max-width: 150px;
-    height: 220px;
-    margin: 5px;
-    border-radius: 16px;
-    border: 2px solid var(--text-tertiary);
-    display: flex;
-    flex-direction: column; */
+    mask:
+        radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
+        radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
 }
 section.protocol-04 .protocol-item-wrap .protocol-item::after {
     content: '';
@@ -2284,6 +2279,10 @@ section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .title {
     text-align: center;
     position: relative;
     white-space: nowrap;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     /* padding: 10px;
     text-align: center;
@@ -2360,7 +2359,7 @@ section.protocol-04 .icon-comfort img {
 @media (max-width: 600px) {
 
     section.protocol-04 .protocol-item-wrap {
-        gap: 15px 8px;
+        gap: 0;
     }
 
     section.protocol-04 .protocol-item-wrap .protocol-item {

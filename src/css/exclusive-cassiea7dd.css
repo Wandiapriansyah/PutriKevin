@@ -4784,41 +4784,65 @@ section.protocol-04 .inner .head .title {
     line-height: normal;
 }
 
+/* WRAP */
 .kat-page__side-to-side .secondary-pane section.protocol-04 .protocol-item-wrap,
 section.protocol-04 .protocol-item-wrap {
     position: relative;
     max-width: 520px;
-    gap: 16px;
+    gap: 0 !important;
 }
 
 section.protocol-04 .inner .body {
     padding: 0 50px;
 }
 
+/* CARD */
 section.protocol-04 .protocol-item-wrap .protocol-item {
     align-items: center;
-    background-color: var(--card-bg);
-    /* border: 1px solid var(--gold-line); */
-    /* border-radius: 24px; */
-    /* flex-direction: row; */
-    /* max-width: 130px; */
+    justify-content: center;
+    gap: 0;
+
     width: 100%;
     height: auto;
-    margin: 0px;
+    margin: 0;
     padding: 16px;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: var(--card-bg);
+
+    /* hilangkan efek jarak */
+    filter: none;
+
+    border-radius: 0;
+    border: 1px solid rgba(219,208,186,0.25);
+
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 
-    justify-content: center;
-    gap: 0px;
+    -webkit-mask:
+        radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
+        radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
+
+    mask:
+        radial-gradient(circle at 0 0, #0000 15px, #000 16px) top left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 0, #0000 15px, #000 16px) top right / 51% 51% no-repeat,
+        radial-gradient(circle at 0 100%, #0000 15px, #000 16px) bottom left / 51% 51% no-repeat,
+        radial-gradient(circle at 100% 100%, #0000 15px, #000 16px) bottom right / 51% 51% no-repeat;
 }
+
+/* GOLD FRAME */
 section.protocol-04 .protocol-item-wrap .protocol-item::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    background: 
+
+    background:
         linear-gradient(var(--gold-line) 0 0) center 5px / calc(100% - 38px) 1px no-repeat,
         linear-gradient(var(--gold-line) 0 0) center calc(100% - 5px) / calc(100% - 38px) 1px no-repeat,
         linear-gradient(var(--gold-line) 0 0) 5px center / 1px calc(100% - 38px) no-repeat,
@@ -4853,64 +4877,48 @@ section.protocol-04 .protocol-item-wrap .protocol-item::after {
         ) right 5px bottom 5px / 16px 16px no-repeat;
 }
 
+/* TEXT */
 section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap {
     justify-content: flex-end;
-    padding: 0px;
+    padding: 0;
     flex-grow: 0;
+    width: 100%;
 }
 
+/* ICON */
 section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap {
-    padding: 0px;
+    padding: 0;
     border-radius: 0;
     width: 80px;
     flex-grow: unset;
 }
 
-/* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
-    width: 40px;
-    height: auto;
-} */
-
-/* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon path {
-    fill: var(--text-tertiary);
-} */
-
-/* section.protocol-04 .protocol-item-wrap .protocol-item .text-wrap .text {
-    font-family: var(--body-text-family);
-    font-weight: var(--body-text-weight);
-    font-size: var(--body-text-size);
-    color: var(--text-tertiary);
-} */
-
+/* MOBILE */
 @media (max-width: 360px) {
-    /* section.protocol-04 .protocol-item-wrap {
-        flex-direction: row;
-    } */
 
-    section.protocol-04 .protocol-item-wrap .protocol-item {}
+    section.protocol-04 .protocol-item-wrap {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media (min-width: 768px) {
+
     section.protocol-04 .protocol-item-wrap .protocol-item {
-        /* flex-direction: row; */
-        /* max-width: 190px; */
         height: 215px;
     }
 
-    /* section.protocol-04 .protocol-item-wrap .protocol-item .icon-wrap .icon {
-        width: 70px;
-    } */
 }
 
 @media (min-width: 560px) and (max-width:960px) {}
 
 @media (min-width: 1600px) {
-    section.protocol-04 .inner {}
 
     section.protocol-04 .inner .head {
         max-width: unset;
         position: relative;
     }
+
 }
 
 
