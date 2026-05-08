@@ -3110,7 +3110,8 @@
                                 <p class="info-date" data-aos="fade-up" data-aos-duration="1000">Feb 07<sup>th</sup>, 2026</p>
                             </div>
                         </div>
-                        <div class="rsvp-body"><!-- RSVP Message -->
+                        <div class="rsvp-body">
+                            <!-- RSVP Message -->
                             <div class="rsvp-message-wrap not_going aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
                                 style="opacity: 1; transition-duration: 1200ms;">
                                 <div class="rsvp-message-content">
@@ -3125,13 +3126,147 @@
                                         chance ;)</p>
                                 </div>
                             </div>
+
+                            <div class="rsvp-form-wrapper">
+                                <div class="form-group guest-name-wrap " data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200"
+                                    style="padding: 0.5rem">
+                                    <input type="text" name="name" class="form-control guest-name" placeholder="Name" value="">
+                                </div>
+                            
+                                <!-- Status -->
+                                <div class="rsvp-status-wrap">
+                                    <div class="rsvp-status-head aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
+                                        style="opacity: 1; transition-duration: 1200ms;">
+                                        <p class="rsvp-status-caption">Will you attend our wedding?</p>
+                                    </div>
+                                    <div class="rsvp-status-body">
+                                        <div class="rsvp-confirm-wrap">
+                                            <label data-aos="fade-up" data-aos-duration="1200" class="aos-init aos-animate"
+                                                style="opacity: 1; transition-duration: 1200ms;">
+                                                <input type="radio" name="rsvp_status" value="going">
+                                                <div class="rsvp-confirm-btn going">
+                                                    Will Attend
+                                                    <div class="check-rsvp">
+                                                        <svg style="width: 20px; height:20px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="none">
+                                                            <path
+                                                                d="M17.9425 6.06754L7.94254 16.0675C7.88449 16.1256 7.81556 16.1717 7.73969 16.2032C7.66381 16.2347 7.58248 16.2508 7.50035 16.2508C7.41821 16.2508 7.33688 16.2347 7.26101 16.2032C7.18514 16.1717 7.11621 16.1256 7.05816 16.0675L2.68316 11.6925C2.56588 11.5753 2.5 11.4162 2.5 11.2503C2.5 11.0845 2.56588 10.9254 2.68316 10.8082C2.80044 10.6909 2.9595 10.625 3.12535 10.625C3.2912 10.625 3.45026 10.6909 3.56753 10.8082L7.50035 14.7418L17.0582 5.18316C17.1754 5.06588 17.3345 5 17.5003 5C17.6662 5 17.8253 5.06588 17.9425 5.18316C18.0598 5.30044 18.1257 5.4595 18.1257 5.62535C18.1257 5.7912 18.0598 5.95026 17.9425 6.06754Z"
+                                                                fill="#700F06"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label data-aos="fade-up" data-aos-duration="1200" class="aos-init aos-animate"
+                                                style="opacity: 1; transition-duration: 1200ms;">
+                                                <input type="radio" name="rsvp_status" value="not_going">
+                                                <div class="rsvp-confirm-btn not-going">
+                                                    Unable To Attend
+                                                    <div class="check-rsvp">
+                                                        <svg style="width: 20px; height:20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+                                                            <path
+                                                                d="M17.9425 6.06754L7.94254 16.0675C7.88449 16.1256 7.81556 16.1717 7.73969 16.2032C7.66381 16.2347 7.58248 16.2508 7.50035 16.2508C7.41821 16.2508 7.33688 16.2347 7.26101 16.2032C7.18514 16.1717 7.11621 16.1256 7.05816 16.0675L2.68316 11.6925C2.56588 11.5753 2.5 11.4162 2.5 11.2503C2.5 11.0845 2.56588 10.9254 2.68316 10.8082C2.80044 10.6909 2.9595 10.625 3.12535 10.625C3.2912 10.625 3.45026 10.6909 3.56753 10.8082L7.50035 14.7418L17.0582 5.18316C17.1754 5.06588 17.3345 5 17.5003 5C17.6662 5 17.8253 5.06588 17.9425 5.18316C18.0598 5.30044 18.1257 5.4595 18.1257 5.62535C18.1257 5.7912 18.0598 5.95026 17.9425 6.06754Z"
+                                                                fill="#700F06"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <!-- Amount -->
+                                <div class="rsvp-amount-wrap" id="rsvpAmountWrap">
+                                    <div class="rsvp-session-wrap">
+                                        <div class="session-caption-wrap">
+                                            <p class="caption aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
+                                                style="opacity: 1; transition-duration: 1200ms;">Which event will you attend?</p>
+                                        </div>
+                                        <div class="session-btn-wrap"><label data-aos="fade-up" data-aos-duration="1200"
+                                                style="opacity: 1; transition-duration: 1200ms;" class="aos-init aos-animate">
+                                                <input type="checkbox" name="selected_event[]" value="132613">
+                                                <div class="rsvp-session-btn">
+                                                    Holy Matrimony
+                                                    <div class="check-rsvp">
+                                                        <svg style="width: 20px; height:20px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="none">
+                                                            <path
+                                                                d="M17.9425 6.06754L7.94254 16.0675C7.88449 16.1256 7.81556 16.1717 7.73969 16.2032C7.66381 16.2347 7.58248 16.2508 7.50035 16.2508C7.41821 16.2508 7.33688 16.2347 7.26101 16.2032C7.18514 16.1717 7.11621 16.1256 7.05816 16.0675L2.68316 11.6925C2.56588 11.5753 2.5 11.4162 2.5 11.2503C2.5 11.0845 2.56588 10.9254 2.68316 10.8082C2.80044 10.6909 2.9595 10.625 3.12535 10.625C3.2912 10.625 3.45026 10.6909 3.56753 10.8082L7.50035 14.7418L17.0582 5.18316C17.1754 5.06588 17.3345 5 17.5003 5C17.6662 5 17.8253 5.06588 17.9425 5.18316C18.0598 5.30044 18.1257 5.4595 18.1257 5.62535C18.1257 5.7912 18.0598 5.95026 17.9425 6.06754Z"
+                                                                fill="#700F06"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </label><label data-aos="fade-up" data-aos-duration="1200"
+                                                style="opacity: 1; transition-duration: 1200ms;" class="aos-init aos-animate">
+                                                <input type="checkbox" name="selected_event[]" value="132615">
+                                                <div class="rsvp-session-btn">
+                                                    Reception
+                                                    <div class="check-rsvp">
+                                                        <svg style="width: 20px; height:20px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="none">
+                                                            <path
+                                                                d="M17.9425 6.06754L7.94254 16.0675C7.88449 16.1256 7.81556 16.1717 7.73969 16.2032C7.66381 16.2347 7.58248 16.2508 7.50035 16.2508C7.41821 16.2508 7.33688 16.2347 7.26101 16.2032C7.18514 16.1717 7.11621 16.1256 7.05816 16.0675L2.68316 11.6925C2.56588 11.5753 2.5 11.4162 2.5 11.2503C2.5 11.0845 2.56588 10.9254 2.68316 10.8082C2.80044 10.6909 2.9595 10.625 3.12535 10.625C3.2912 10.625 3.45026 10.6909 3.56753 10.8082L7.50035 14.7418L17.0582 5.18316C17.1754 5.06588 17.3345 5 17.5003 5C17.6662 5 17.8253 5.06588 17.9425 5.18316C18.0598 5.30044 18.1257 5.4595 18.1257 5.62535C18.1257 5.7912 18.0598 5.95026 17.9425 6.06754Z"
+                                                                fill="#700F06"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </label><label data-aos="fade-up" data-aos-duration="1200"
+                                                style="opacity: 1; transition-duration: 1200ms;" class="aos-init aos-animate">
+                                                <input type="checkbox" name="selected_event_all" value="check_all" id="check-all">
+                                                <div class="rsvp-session-btn all">Attend All</div>
+                                            </label></div>
+                                    </div>
+                                    <div class="rsvp-amount-head aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
+                                        style="opacity: 1; transition-duration: 1200ms;">
+                                        <p class="rsvp-amount-caption">People you bring including you?</p>
+                                        <div class="rsvp-amount-controller-wrap">
+                                            <div class="rsvp-amount-controller">
+                                                <div class="toggle-wrap minus">
+                                                    <button class="toggle-btn minus" type="button" data-quantity="minus" data-field="rsvp_amount">
+                                                        <svg class="toggle-icon" width="81" height="6" viewBox="0 0 81 6" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M3 3H78" stroke="white" stroke-width="6" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="input-wrap">
+                                                    <input class="input-control" data-quantity="control" type="number" name="rsvp_amount" value="1"
+                                                        min="1" max="2">
+                                                </div>
+                                                <div class="toggle-wrap plus">
+                                                    <button class="toggle-btn plus" type="button" data-quantity="plus" data-field="rsvp_amount">
+                                                        <svg class="toggle-icon" width="81" height="86" viewBox="0 0 81 86" fill="none"
+                                                            xmlns="www.w3.org/2000/svg">
+                                                            <path d="M40.5 3V82.5407" stroke="white" stroke-width="5" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                            <path d="M3 42.7705H78" stroke="white" stroke-width="5" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="hidden" name="post" value="rsvp_request">
+                                    <input type="hidden" name="request" value="update_rsvp">
+                                    <input type="hidden" name="template" value="template_cassie">
+                                </div>
+                                <div class="rsvp-confirm-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
+                                    style="opacity: 1; transition-duration: 1200ms;">
+                                    <button class="rsvp-confirm-btn confirm submit" type="submit">Confirm</button>
+                                </div>
+                                <div class="ornaments-wrapper"></div>
+                            
+                            </div>
                         
-                            <div class="rsvp-change-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
+                            <!-- <div class="rsvp-change-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200"
                                 style="opacity: 1; transition-duration: 1200ms;">
                                 <div class="rsvp-confirm-wrap">
                                     <button class="rsvp-confirm-btn confirm" id="changeRSVP">Change</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="rsvp-body">
         
